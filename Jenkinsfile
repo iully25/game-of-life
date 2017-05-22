@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('start') {
       steps {
-        build(job: '1', propagate: true, quietPeriod: 5, wait: true)
+        build(job: 'new', propagate: true, quietPeriod: 5, wait: true)
       }
     }
   }
