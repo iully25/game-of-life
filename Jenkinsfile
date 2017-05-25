@@ -1,9 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('start') {
+    stage('game of life') {
       steps {
-        build(job: 'gameoflife', quietPeriod: 5, wait: true)
+        parallel(
+          "game of life": {
+            build(job: 'gameoflife', quietPeriod: 5, wait: true)
+            
+          },
+          "test": {
+            timestamps() {
+              echo 'Hello'
+            }
+            
+            
+          }
+        )
       }
     }
   }
