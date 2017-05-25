@@ -3,11 +3,8 @@ pipeline {
   stages {
     stage('start') {
       steps {
-        build(job: 'test', quietPeriod: 5, wait: true)
+        build(job: 'gameoflife', quietPeriod: 5, wait: true)
       }
     }
-  }
-  environment {
-    some = 'value'
   }
 }
